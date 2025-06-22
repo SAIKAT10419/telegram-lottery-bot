@@ -47,9 +47,10 @@ async def draw_now(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     result = perform_draw()
-    await update.message.reply_text(f"🎯 Draw Completed!
+    await update.message.reply_text(f"""🎯 Draw Completed!
 Winning Number: {result['number']}
-Winner: {result['winner'] or 'No winner'}")
+Winner: {result['winner'] or 'No winner'}""")
+
 
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("balance", balance))
