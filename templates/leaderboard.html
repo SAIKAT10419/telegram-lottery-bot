@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lottery Leaderboard</title>
+  <style>
+    body { font-family: sans-serif; background: #f8f8f8; padding: 20px; }
+    h1, h2 { color: #333; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { padding: 10px; text-align: left; border-bottom: 1px solid #ddd; }
+    th { background: #444; color: white; }
+  </style>
+</head>
+<body>
+  <h1>🎯 Lottery Leaderboard</h1>
+  <h2>🏆 Top Users</h2>
+  <table>
+    <tr><th>Username</th><th>Balance</th></tr>
+    {% for u in users %}
+    <tr><td>@{{ u[0] }}</td><td>{{ u[1] }}</td></tr>
+    {% endfor %}
+  </table>
+  <h2>📢 Latest Draw</h2>
+  {% if draw %}
+    <p><strong>Date:</strong> {{ draw.date }}</p>
+    <p><strong>Winning Number:</strong> {{ draw.number }}</p>
+    <p><strong>Winner:</strong> @{{ draw.winner }}</p>
+  {% else %}
+    <p>No draw yet.</p>
+  {% endif %}
+  <h2>📥 Entries Today: {{ entries }}</h2>
+</body>
+</html>
