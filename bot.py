@@ -3,6 +3,8 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 from db import init_db, add_user, get_balance, buy_ticket, transfer_balance
 from draw import perform_draw
 from config import BOT_TOKEN, ADMINS
+print("BOT_TOKEN:", BOT_TOKEN)
+
 from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime
 
